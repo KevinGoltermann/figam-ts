@@ -23,6 +23,23 @@ import { LeftSidebar, Live, Navbar, RightSidebar } from "@/components/index";
 import { handleImageUpload } from "@/lib/shapes";
 import { defaultNavElement } from "@/constants";
 import { ActiveElement, Attributes } from "@/types/type";
+import { datadogRum } from "@datadog/browser-rum";
+
+datadogRum.init({
+  applicationId: "6852264a-c5a7-4777-af64-faebef73e384",
+  clientToken: "pub56c724de68d105cdcbfee580bd0a21bc",
+  site: "us3.datadoghq.com",
+  service: "figma",
+  env: "staging",
+  // Specify a version number to identify the deployed version of your application in Datadog
+  // version: '1.0.0',
+  sessionSampleRate: 100,
+  sessionReplaySampleRate: 100,
+  trackUserInteractions: true,
+  trackResources: true,
+  trackLongTasks: true,
+  defaultPrivacyLevel: "mask-user-input",
+});
 
 const Home = () => {
   /**
